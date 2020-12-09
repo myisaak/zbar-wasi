@@ -1,6 +1,6 @@
 {
   "name": "zbar-wasi",
-  "version": "1.0.4",
+  "version": "1.0.7",
   "description": "Scan barcodes in web browsers",
   "homepage": "https://github.com/MyIsaak/zbar-wasi",
   "bugs": "https://github.com/MyIsaak/zbar-wasi/issues",
@@ -9,7 +9,8 @@
   "scripts": {
     "build": "npm-run-all build:*",
     "build:wasm": "./install.sh",
-    "build:js": "rollup -c"
+    "build:js": "rollup -c",
+    "prepack": "npm run build"
   },
   "files": [
     "dist/zbar-wasi.esm.js",

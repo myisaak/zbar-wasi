@@ -8,8 +8,8 @@
     <canvas id="canvas" style="width: 100%; height: 100vh; object-fit: contain; object-position: center;"></canvas>
     <video id="video" style="display: hidden; height: 0px; width: 100%;"></video>
     <script type="module">
-      import { scanImage, createZbar } from "https://unpkg.com/zbar-wasi@1.0.4/dist/zbar-wasi.esm.js";
-      const ZBAR = createZbar({ wasmpath: "https://unpkg.com/zbar-wasi@1.0.4/dist/zbar.wasm" });
+      import { scanImage, createZbar } from "https://unpkg.com/zbar-wasi@1.0.7/dist/zbar-wasi.esm.js";
+      const ZBAR = createZbar({ wasmpath: "https://unpkg.com/zbar-wasi@1.0.7/dist/zbar.wasm" });
       const domCanvas = document.getElementById("canvas");
       const domVideo = document.getElementById("video");
       const ctx = domCanvas.getContext("2d", { alpha: false });
