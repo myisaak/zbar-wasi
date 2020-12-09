@@ -16,6 +16,7 @@
     "dist/zbar-wasi.esm.js",
     "dist/zbar.wasm"
   ],
+  "keywords": [ "zbar", "wasm", "barcode", "scanner", "webassembly" ],
   "author": "Isaak Eriksson <isaak.eriksson@protonmail.com>",
   "license": "MIT",
   "devDependencies": {
