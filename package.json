@@ -10,7 +10,7 @@
     "build": "npm-run-all build:*",
     "build:wasm": "./install.sh",
     "build:js": "rollup -c",
-    "prepack": "npm run build"
+    "prepack": "NODE_ENV=production npm run build"
   },
   "files": [
     "dist/zbar-wasi.esm.js",
