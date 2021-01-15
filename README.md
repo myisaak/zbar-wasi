@@ -12,6 +12,12 @@ Scan barcodes in web browsers
 
 This library allows web browsers to scan barcodes with a Webassembly and WASI backend.
 
+## Why?
+
+- Unlike most Webassembly projects this one is compiled with WASI instead of Emscripten.
+- Optimized for size with a WASM binary size of 161.98 KB gzipped (244.40 KB uncompressed).
+- Works perfectly on mobile devices and desktop
+
 ## Demo
 
 Try scanning barcodes with your camera: https://myisaak.github.io/zbar-wasi/
@@ -21,4 +27,20 @@ Watch your command line for found barcodes.
 
 ```
 npm install zbar-wasi
+```
+
+## Usage
+
+```
+import { scanImage, createZbar } from "zbar-wasi";
+
+const start = async () => {
+  // move ./node_modules/zbar-wasi/dist/zbar.wasm to your web directory"
+  const ZBAR = await createZbar({ wasmpath: "./zbar.wasm" });
+  const imageData = ctx.getImageData(0, 0, width, height);
+  const results = scanImage(imageData);
+  console.log(results);
+  // outputs [ barcode1, barcode2, ... ]
+}
+start();
 ```
