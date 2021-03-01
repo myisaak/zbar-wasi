@@ -31,7 +31,7 @@ npm install zbar-wasi
 
 ## Usage
 
-```
+```js
 import { scanImage, createZbar } from "zbar-wasi";
 
 const start = async () => {
