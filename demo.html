@@ -8,8 +8,8 @@
     <canvas id="canvas" style="width: 100%; height: 100vh; object-fit: cover; object-position: center;"></canvas>
     <video id="video" style="display: hidden; height: 0px; width: 100%;"></video>
     <script type="module">
-      import { scanImage, createZbar } from "https://unpkg.com/zbar-wasi@1.0.7/dist/zbar-wasi.esm.js";
-      const ZBAR = createZbar({ wasmpath: "https://unpkg.com/zbar-wasi@1.0.7/dist/zbar.wasm" });
+      import { scanImage, createZbar } from "./dist/zbar-wasi.esm.js";
+      const ZBAR = createZbar({ wasmpath: "./dist/zbar.wasm" });
       
       const domCanvas = document.getElementById("canvas");
       const domVideo = document.getElementById("video");
@@ -22,7 +22,9 @@
         }
         ctx.drawImage(domVideo, 0, 0, domCanvas.width, domCanvas.height);
         const imageData = ctx.getImageData(0, 0, domCanvas.width, domCanvas.height);
+        console.time("scanImage");
         const results = scanImage(imageData);
+        console.timeEnd("scanImage");
         if (results.length > 0) alert("Barcodes: " + results.join(","));
         renderLoopId = requestAnimationFrame(renderLoop);
       };

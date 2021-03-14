@@ -7,12 +7,6 @@ OUT_WASM := $(OUT_JS:.js=.wasm)
 
 all: $(OUT_JS)
 
-zbar-opt.wasm: zbar.wasm
-	wasm-opt \
-		-Oz \
-		-o $@ \
-		$+
-
 zbar.wasm: zbar.c $(CODEC_OUT)
 	clang \
 		-v \

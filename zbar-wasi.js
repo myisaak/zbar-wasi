@@ -108,8 +108,8 @@ const scanImage = (imgData, ptrScanner) => {
   return result;
 };
 
-const createZbar = async ({ wasmpath }) => {
-  const file = fetch(wasmpath || zbarBinaryPath);
+const createZbar = async ({ wasmpath = zbarBinaryPath } = {}) => {
+  const file = fetch(wasmpath);
   const imports = getImports(wasi);
   const { instance } = await WebAssembly.instantiateStreaming(file, imports);
   wasi.memory = instance.exports.memory;

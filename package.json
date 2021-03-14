@@ -1,6 +1,6 @@
 {
   "name": "zbar-wasi",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "Scan barcodes in web browsers",
   "homepage": "https://github.com/MyIsaak/zbar-wasi",
   "bugs": "https://github.com/MyIsaak/zbar-wasi/issues",
